@@ -5,6 +5,7 @@ import NoteView from "./components/NoteView";
 import FolderView from "./components/FolderView";
 import { Route, Switch, Link } from "react-router-dom";
 import Store from "./components/dummy-store";
+
 import "./App.css";
 
 export class App extends Component {
@@ -28,7 +29,9 @@ export class App extends Component {
     return (
       <div>
         <header>
-          <Link to="/">Noteful</Link>
+          <Link to="/">
+            <h2>Noteful</h2>
+          </Link>
         </header>
         <Switch>
           <Route
@@ -64,6 +67,7 @@ export class App extends Component {
                 notes={this.state.notes.find(
                   note => note.id === routeProps.match.params.noteId
                 )}
+                {...routeProps}
               />
             )}
           />
