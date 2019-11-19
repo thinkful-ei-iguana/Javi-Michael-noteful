@@ -3,7 +3,7 @@ import HomePage from "./components/HomePage";
 import NotFound from "./components/NotFound";
 import NoteView from "./components/NoteView";
 import FolderView from "./components/FolderView";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import Store from "./components/dummy-store";
 import "./App.css";
 
@@ -27,7 +27,9 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <header>Noteful</header>
+        <header>
+          <Link to="/">Noteful</Link>
+        </header>
         <Switch>
           <Route
             exact
@@ -46,9 +48,10 @@ export class App extends Component {
             render={routeProps => (
               <FolderView
                 folders={this.state.folders}
-                notes={this.state.notes.find(
+                notes={this.state.notes.filter(
                   note => note.folderId === routeProps.match.params.folderId
                 )}
+                {...routeProps}
               />
             )}
           />

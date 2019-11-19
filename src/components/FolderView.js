@@ -3,14 +3,14 @@ import Folders from "./Folders";
 import Notes from "./Notes";
 
 export default function FolderView(props) {
-  const { folders, notes } = props;
+  console.log(props);
   return (
     <div id="wrapper">
       <section>
-        <Folders folders={folders} folderClick={props.folderClick} />
+        <Folders folders={props.folders} />
       </section>
       <main>
-        <Notes notes={notes} noteClick={props.noteClick} />
+        <Notes notes={props.notes} />
       </main>
     </div>
   );
