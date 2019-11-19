@@ -1,22 +1,45 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   box-sizing: border-box;
 }
 
-header{
+header {
   text-align: center;
 }
 
-main,section{
+main,
+section {
+  text-align: center;
   border: 1px solid black;
 }
-#wrapper{
-  display: flex;
-  justify-content: space-between;
+
+main {
+  width: 65%;
 }
 
+section {
+  width: 35%;
+}
+#wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
 
+.note {
+  border: 1px solid black;
+  padding: 3px;
+  margin: 3px;
+}
+
+.Notes {
+  width: 60%;
+}
+.Folder {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid black;
+}
