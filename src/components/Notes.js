@@ -7,6 +7,7 @@ export default function Notes(props) {
       {props.notes.map(note => {
         return <Note key={note.id} name={note.name} modified={note.modified} />;
       })}
+      <button>Add new note</button>
     </div>
   );
 }

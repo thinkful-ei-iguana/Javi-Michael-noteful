@@ -5,10 +5,17 @@ import "./App.css";
 import Store from "./components/dummy-store";
 
 export class App extends Component {
-  // constructor(props){
-  //   super(props)
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  noteClick = selectedNote => {
+    console.log(selectedNote);
+  };
 
-  // }
+  folderClick = selectedFolder => {
+    console.log(selectedFolder);
+  };
 
   render() {
     const { folders, notes } = Store;
@@ -17,10 +24,10 @@ export class App extends Component {
         <header>Noteful</header>
         <div id="wrapper">
           <section>
-            <Folders folders={folders} />
+            <Folders folders={folders} folderClick={this.folderClick} />
           </section>
           <main>
-            <Notes notes={notes} />
+            <Notes notes={notes} noteClick={this.noteClick} />
           </main>
         </div>
       </div>
