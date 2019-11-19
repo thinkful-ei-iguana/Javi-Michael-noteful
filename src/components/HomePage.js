@@ -1,24 +1,16 @@
 import React from "react";
 import Notes from "./Notes";
 import Folders from "./Folders";
-import Store from "./dummy-store";
 
 export default function HomePage(props) {
-  const noteClick = selectedNote => {
-    console.log(selectedNote);
-  };
-
-  const folderClick = selectedFolder => {
-    console.log(selectedFolder);
-  };
-  const { folders, notes } = Store;
+  const { folders, notes } = props;
   return (
     <div id="wrapper">
       <section>
-        <Folders folders={folders} folderClick={folderClick} />
+        <Folders folders={folders} folderClick={props.folderClick} />
       </section>
       <main>
-        <Notes notes={notes} noteClick={noteClick} />
+        <Notes notes={notes} noteClick={props.noteClick} />
       </main>
     </div>
   );
