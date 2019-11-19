@@ -55,7 +55,20 @@ export class App extends Component {
               />
             )}
           />
-          <Route path="/notes/:noteId" component={NoteView} />
+          <Route 
+          path="/notes/:noteId" 
+          render={routeProps => (
+            <NoteView 
+              notes={this.state.notes.filter(
+              note => note.id === routeProps.match.params.id
+            )}
+            {...routeProps}
+            />
+            
+          )}
+          component={NoteView} />
+
+
           <Route component={NotFound} />
         </Switch>
       </div>

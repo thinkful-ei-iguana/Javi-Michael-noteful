@@ -1,5 +1,15 @@
 import React from "react";
+import Note from './Note'
 
 export default function NoteView(props) {
-  // const note = props.notes.find();
+  console.log('noteView:',props)
+
+
+  return (
+    <div>
+      <Note notes={props.notes}/>
+    </div>
+
+
+  )
 }
