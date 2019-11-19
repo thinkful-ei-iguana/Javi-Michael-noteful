@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export default function Note(props) {
+  console.log("note:", props);
   let readableDate = new Date(props.modified);
   readableDate = readableDate.toString();
 
@@ -9,7 +10,7 @@ export default function Note(props) {
     <Link to={`/notes/${props.id}`}>
       <div className="note" id={props.id}>
         <h3 id={props.id}>{props.name}</h3>
-              <p>{readableDate}</p>
+        <p>{readableDate}</p>
       </div>
     </Link>
   );

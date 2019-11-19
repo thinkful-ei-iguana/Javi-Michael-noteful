@@ -43,6 +43,7 @@ export class App extends Component {
               />
             )}
           />
+
           <Route
             path="/folder/:folderId"
             render={routeProps => (
@@ -55,19 +56,17 @@ export class App extends Component {
               />
             )}
           />
-          <Route 
-          path="/notes/:noteId" 
-          render={routeProps => (
-            <NoteView 
-              notes={this.state.notes.filter(
-              note => note.id === routeProps.match.params.id
-            )}
-            {...routeProps}
-            />
-            
-          )}
-          component={NoteView} />
 
+          <Route
+            path="/notes/:noteId"
+            render={routeProps => (
+              <NoteView
+                notes={this.state.notes.find(
+                  note => note.id === routeProps.match.params.noteId
+                )}
+              />
+            )}
+          />
 
           <Route component={NotFound} />
         </Switch>
