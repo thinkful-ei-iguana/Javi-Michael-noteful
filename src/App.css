@@ -43,3 +43,8 @@ section {
   padding: 5px;
   border: 1px solid black;
 }
+
+header {
+  height: 80px;
+  border: 1px solid black;
+}
