@@ -17,13 +17,6 @@ export class App extends Component {
       folderId: ""
     };
   }
-  noteClick = selectedNote => {
-    console.log(selectedNote);
-  };
-
-  folderClick = selectedFolder => {
-    console.log(selectedFolder);
-  };
 
   render() {
     return (
