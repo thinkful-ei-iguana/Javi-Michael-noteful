@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Note(props) {
-  console.log("note:", props);
   let readableDate = new Date(props.modified);
   readableDate = readableDate.toString();
 

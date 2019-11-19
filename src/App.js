@@ -67,6 +67,7 @@ export class App extends Component {
                 notes={this.state.notes.find(
                   note => note.id === routeProps.match.params.noteId
                 )}
+                folders={this.state.folders}
                 {...routeProps}
               />
             )}

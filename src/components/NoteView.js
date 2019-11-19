@@ -1,15 +1,15 @@
 import React from "react";
 import Note from "./Note";
-import { Link } from "react-router-dom";
 
 export default function NoteView(props) {
-  console.log(props);
+  const folderId = props.notes.folderId;
+  const folderMatch = props.folders.find(folder => folder.id === folderId);
 
   return (
     <div id="wrapper">
       <section>
         <button onClick={() => props.history.goBack()}>Back</button>
-        <h4>{props.notes.folderId}</h4>
+        <h4>{folderMatch.name}</h4>
       </section>
       <main>
         <Note
